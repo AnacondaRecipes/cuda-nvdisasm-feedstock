@@ -21,7 +21,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [osx]
+  skip: true  # [osx or (linux and s390x)]
   script:
     - cp -rv bin $PREFIX        # [linux]
     - move bin\* %LIBRARY_BIN%  # [win]

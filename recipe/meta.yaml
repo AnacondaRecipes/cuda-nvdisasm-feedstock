@@ -2,7 +2,6 @@
 {% set version = "13.0.85" %}
 {% set cuda_version = "13.0" %}
 {% set platform = "linux-x86_64" %}  # [linux64]
-{% set platform = "linux-ppc64le" %}  # [ppc64le]
 {% set platform = "linux-sbsa" %}  # [aarch64]
 {% set platform = "windows-x86_64" %}  # [win]
 {% set extension = "tar.xz" %}  # [not win]
@@ -21,7 +20,7 @@ source:
 build:
   number: 0
   binary_relocation: false
-  skip: true  # [osx or ppc64le]
+  skip: true  # [osx]
   script:
     - move bin\* %LIBRARY_BIN%  # [win]
 
@@ -59,7 +58,10 @@ about:
     nvdisasm extracts information from standalone cubin files and presents them in
     human readable format.
   doc_url: https://docs.nvidia.com/cuda/cuda-binary-utilities/
+  dev_url: https://docs.nvidia.com/cuda/index.html
 
 extra:
+  skip-lints:
+    - license_file_overspecified
   recipe-maintainers:
     - conda-forge/cuda

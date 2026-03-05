@@ -23,9 +23,9 @@ source:
   sha256: 955ba1f52f7115031f10408ce3cec4c745df41dba8fdf6024c3983d899e9fbbc  # [win]
 
 build:
-  number: 1
+  number: 0
   binary_relocation: false
-  skip: true  # [osx or ppc64le]
+  skip: true  # [osx]
   script:
     - move bin\* %LIBRARY_BIN%  # [win]
 
@@ -57,11 +57,13 @@ about:
   license_file: LICENSE
   license: LicenseRef-NVIDIA-End-User-License-Agreement
   license_url: https://docs.nvidia.com/cuda/eula/index.html
+  license_family: Other
   summary: nvdisasm extracts information from standalone cubin files
   description: |
     nvdisasm extracts information from standalone cubin files and presents them in
     human readable format.
   doc_url: https://docs.nvidia.com/cuda/cuda-binary-utilities/
+  dev_url: https://docs.nvidia.com/cuda/cuda-binary-utilities/
 
 extra:
   recipe-maintainers:

@@ -1,6 +1,6 @@
 {% set name = "cuda-nvdisasm" %}
-{% set version = "13.1.115" %}
-{% set cuda_version = "13.1" %}
+{% set version = "13.2.78" %}
+{% set cuda_version = "13.2" %}
 {% set platform = "linux-x86_64" %}  # [linux64]
 {% set platform = "linux-sbsa" %}  # [aarch64]
 {% set platform = "windows-x86_64" %}  # [win]
@@ -13,9 +13,9 @@ package:
 
 source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvdisasm/{{ platform }}/cuda_nvdisasm-{{ platform }}-{{ version }}-archive.{{ extension }}
-  sha256: 9233ea5446f2ee1220b4ba140d79f7eb8208c7d9d30fab588f7d73a1ffab45ef  # [linux64]
-  sha256: 743bbc95b6ffcd1997a98013b86400b3aa37da5192653e407ed86d52772eeb57  # [aarch64]
-  sha256: 3313278cb452427954a271cc9971b9e8e0688b2d09906b8c2f5e8176b990d011  # [win]
+  sha256: 4a09184fe49bf9825cc21f0e7fa2133a0eeb75a85b125671ac40acb3fe1150d6  # [linux64]
+  sha256: 0917e7291f41b6a32b5350e5c5e6f80ae8ca873a2504a0e9b2233b74bafe5cae  # [aarch64]
+  sha256: 6fa14f9f0a4c6ac85cc1ed07d412c05100f2e9a89860857ef0b04e0fc25945b1  # [win]
 
 build:
   number: 0
@@ -53,6 +53,7 @@ about:
   license_file: LICENSE
   license: LicenseRef-NVIDIA-End-User-License-Agreement
   license_url: https://docs.nvidia.com/cuda/eula/index.html
+  license_family: Other
   summary: nvdisasm extracts information from standalone cubin files
   description: |
     nvdisasm extracts information from standalone cubin files and presents them in
@@ -61,7 +62,5 @@ about:
   dev_url: https://docs.nvidia.com/cuda/index.html
 
 extra:
-  skip-lints:
-    - license_file_overspecified
   recipe-maintainers:
     - conda-forge/cuda
